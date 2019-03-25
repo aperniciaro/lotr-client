@@ -8,11 +8,19 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.GetAllCharacters()
+    this.GetAllRaces()
+  }
+
+  GetAllCharacters = () => {
     axios.get('https://localhost:5001/api/Characters').then(resp => {
       this.setState({
         characters: resp.data
       })
     })
+  }
+
+  GetAllRaces = () => {
     axios.get('https://localhost:5001/api/Races').then(resp => {
       this.setState({
         races: resp.data
@@ -21,7 +29,9 @@ class App extends Component {
   }
 
   AddCharacter = () => {
-    axios.post('https://localhost:5001/api/Characters')
+    axios
+      .post('https://localhost:5001/api/Characters')
+      .then(this.GetAllCharacters())
   }
 
   UpdateCharacter = () => {}
@@ -29,7 +39,7 @@ class App extends Component {
   DeleteCharacter = () => {}
 
   AddRace = () => {
-    axios.post('https://localhost:5001/api/Races')
+    axios.post('https://localhost:5001/api/Races').then(this.GetAllRaces())
   }
 
   UpdateRace = () => {}
