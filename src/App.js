@@ -45,9 +45,9 @@ class App extends Component {
             return <option value={race.raceId}>{race.raceName}</option>
           })}
         </select>
-        <button>Add Character</button>
-        <button>Update Character</button>
-        <button>Delete Character</button>
+        <button onClick="AddCharacter()">Add Character</button>
+        <button onClick="UpdateCharacter()">Update Character</button>
+        <button onClick="DeleteCharacter()">Delete Character</button>
         <h2>Races</h2>
         <ul>
           {this.state.races.map(race => {
@@ -63,9 +63,9 @@ class App extends Component {
           <input type="radio" id="no" name="option" value="no" />
           <label for="no">No</label>
         </div>
-        <button>Add Race</button>
-        <button>Update Race</button>
-        <button>Delete Race</button>
+        <button onClick="AddRace()">Add Race</button>
+        <button onClick="UpdateRace()">Update Race</button>
+        <button onClick="DeleteRace()">Delete Race</button>
       </>
     )
   }
