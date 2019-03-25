@@ -7,12 +7,12 @@ class App extends Component {
     races: []
   }
   componentDidMount() {
-    axios.get('https://localhost:5001/api/characters').then(resp => {
+    axios.get('https://localhost:5001/api/Characters').then(resp => {
       this.setState({
         characters: resp.data
       })
     })
-    axios.get('https://localhost:5001/api/races').then(resp => {
+    axios.get('https://localhost:5001/api/Races').then(resp => {
       this.setState({
         races: resp.data
       })
