@@ -46,6 +46,7 @@ class App extends Component {
           })}
         </select>
         <button>Add Character</button>
+        <button>Update Character</button>
         <button>Delete Character</button>
         <h2>Races</h2>
         <ul>
@@ -63,6 +64,7 @@ class App extends Component {
           <label for="no">No</label>
         </div>
         <button>Add Race</button>
+        <button>Update Race</button>
         <button>Delete Race</button>
       </>
     )
