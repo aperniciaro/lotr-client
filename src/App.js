@@ -28,7 +28,9 @@ class App extends Component {
 
   DeleteCharacter = () => {}
 
-  AddRace = () => {}
+  AddRace = () => {
+    axios.post('https://localhost:5001/api/Races')
+  }
 
   UpdateRace = () => {}
 
