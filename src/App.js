@@ -6,6 +6,7 @@ class App extends Component {
     characters: [],
     races: []
   }
+
   componentDidMount() {
     axios.get('https://localhost:5001/api/Characters').then(resp => {
       this.setState({
@@ -18,6 +19,21 @@ class App extends Component {
       })
     })
   }
+
+  AddCharacter = () => {
+    axios.post('https://localhost:5001/api/Characters')
+  }
+
+  UpdateCharacter = () => {}
+
+  DeleteCharacter = () => {}
+
+  AddRace = () => {}
+
+  UpdateRace = () => {}
+
+  DeleteRace = () => {}
+
   render() {
     return (
       <>
