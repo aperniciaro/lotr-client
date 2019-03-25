@@ -32,7 +32,7 @@ class App extends Component {
         <h2>Races</h2>
         <ul>
           {this.state.races.map(race => {
-            return <li key={race.id}>{race.RaceName}</li>
+            return <li key={race.id}>{race.raceName}</li>
           })}
         </ul>
         <input placeholder="Race" />
