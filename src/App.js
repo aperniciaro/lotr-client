@@ -40,7 +40,10 @@ class App extends Component {
           <label for="no">No</label>
         </div>
         <select>
-          <option>Select Race</option>
+          <option id="race-select">Select Race</option>
+          {this.state.races.map(race => {
+            return <option value={race.raceId}>{race.raceName}</option>
+          })}
         </select>
         <button>Add Character</button>
         <button>Delete Character</button>
