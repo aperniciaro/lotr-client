@@ -29,6 +29,21 @@ class App extends Component {
           })}
         </ul>
         <input placeholder="Character Name" />
+        <input placeholder="Weapon of Choice" />
+        <input placeholder="Profession" />
+        <input placeholder="Residence" />
+        <p>Have they wielded the One Ring?</p>
+        <div>
+          <input type="radio" id="yes" name="option" value="yes" />
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="option" value="no" />
+          <label for="no">No</label>
+        </div>
+        <select>
+          <option>Select Race</option>
+        </select>
+        <button>Add Character</button>
+        <button>Delete Character</button>
         <h2>Races</h2>
         <ul>
           {this.state.races.map(race => {
@@ -36,6 +51,16 @@ class App extends Component {
           })}
         </ul>
         <input placeholder="Race" />
+        <input placeholder="Native Language" />
+        <p>Are they immortal unless slain?</p>
+        <div>
+          <input type="radio" id="yes" name="option" value="yes" />
+          <label for="yes">Yes</label>
+          <input type="radio" id="no" name="option" value="no" />
+          <label for="no">No</label>
+        </div>
+        <button>Add Race</button>
+        <button>Delete Race</button>
       </>
     )
   }
