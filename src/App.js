@@ -71,18 +71,18 @@ class App extends Component {
           placeholder="Character Name"
           onChange={this.ChangeCharacterName}
         />
-        <input placeholder="Weapon of Choice" />
-        <input placeholder="Profession" />
-        <input placeholder="Residence" />
+        <input className="text-field" placeholder="Weapon of Choice" />
+        <input className="text-field" placeholder="Profession" />
+        <input className="text-field" placeholder="Residence" />
         <p>Have they wielded the One Ring?</p>
-        <div>
+        <div className="radio-group">
           <input type="radio" id="yes" name="option" value="yes" />
           <label for="yes">Yes</label>
           <input type="radio" id="no" name="option" value="no" />
           <label for="no">No</label>
         </div>
-        <select>
-          <option id="race-select">Select Race</option>
+        <select className="drop-down">
+          <option value="Select Race">Select Race</option>
           {this.state.races.map(race => {
             return <option value={race.raceId}>{race.raceName}</option>
           })}
@@ -98,10 +98,10 @@ class App extends Component {
             return <li key={race.id}>{race.raceName}</li>
           })}
         </ul>
-        <input placeholder="Race" />
-        <input placeholder="Native Language" />
+        <input className="text-field" placeholder="Race" />
+        <input className="text-field" placeholder="Native Language" />
         <p>Are they immortal unless slain?</p>
-        <div>
+        <div className="radio-group">
           <input type="radio" id="yes" name="option" value="yes" />
           <label for="yes">Yes</label>
           <input type="radio" id="no" name="option" value="no" />
