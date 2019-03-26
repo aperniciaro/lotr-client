@@ -60,7 +60,9 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>LotR-Dex</h1>
+        <header>
+          <h1>LotR-Dex</h1>
+        </header>
         <h2>Characters</h2>
         <ul>
           {this.state.characters.map(character => {
@@ -68,6 +70,7 @@ class App extends Component {
           })}
         </ul>
         <input
+          className="text-field"
           placeholder="Character Name"
           onChange={this.ChangeCharacterName}
         />
@@ -75,23 +78,29 @@ class App extends Component {
         <input className="text-field" placeholder="Profession" />
         <input className="text-field" placeholder="Residence" />
         <p>Have they wielded the One Ring?</p>
-        <div className="radio-group">
+        <section className="radio-group">
           <input type="radio" id="yes" name="option" value="yes" />
           <label for="yes">Yes</label>
           <input type="radio" id="no" name="option" value="no" />
           <label for="no">No</label>
-        </div>
-        <select className="drop-down">
-          <option value="Select Race">Select Race</option>
-          {this.state.races.map(race => {
-            return <option value={race.raceId}>{race.raceName}</option>
-          })}
-        </select>
-        <button onClick={this.AddCharacter}>Add Character</button>
-        <button onClick={this.UpdateCharacter}>Update Character</button>
-        <button onClick={this.DeleteCharacter(this.state.characterNameInput)}>
-          Delete Character
-        </button>
+        </section>
+        <section className="character-controls">
+          <select className="drop-down">
+            <option value="Select Race">Select Race</option>
+            {this.state.races.map(race => {
+              return <option value={race.raceId}>{race.raceName}</option>
+            })}
+          </select>
+          <section className="button-group">
+            <button onClick={this.AddCharacter}>Add Character</button>
+            <button onClick={this.UpdateCharacter}>Update Character</button>
+            <button
+              onClick={this.DeleteCharacter(this.state.characterNameInput)}
+            >
+              Delete Character
+            </button>
+          </section>
+        </section>
         <h2>Races</h2>
         <ul>
           {this.state.races.map(race => {
@@ -101,15 +110,17 @@ class App extends Component {
         <input className="text-field" placeholder="Race" />
         <input className="text-field" placeholder="Native Language" />
         <p>Are they immortal unless slain?</p>
-        <div className="radio-group">
+        <section className="radio-group">
           <input type="radio" id="yes" name="option" value="yes" />
           <label for="yes">Yes</label>
           <input type="radio" id="no" name="option" value="no" />
           <label for="no">No</label>
-        </div>
-        <button onClick={this.AddRace}>Add Race</button>
-        <button onClick={this.UpdateRace}>Update Race</button>
-        <button onClick={this.DeleteRace}>Delete Race</button>
+        </section>
+        <section className="button-group">
+          <button onClick={this.AddRace}>Add Race</button>
+          <button onClick={this.UpdateRace}>Update Race</button>
+          <button onClick={this.DeleteRace}>Delete Race</button>
+        </section>
       </>
     )
   }

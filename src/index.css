@@ -7,6 +7,39 @@ html {
 }
 
 body {
-  margin: 0;
+  margin-left: 1rem;
   min-height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.text-field {
+  margin: 0.25rem;
+}
+
+.radio-group {
+  margin: 0.25rem;
+}
+
+.drop-down {
+  width: 7rem;
+}
+
+button {
+  margin: 0.25rem;
+  width: 5rem;
+  height: 2rem;
+}
+
+.character-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.button-group {
+  justify-content: center;
+  align-items: center;
 }
