@@ -43,7 +43,11 @@ class App extends Component {
       .then(this.GetAllCharacters())
   }
 
-  UpdateCharacter = () => {}
+  UpdateCharacter = () => {
+    axios
+      .post('https://localhost:5001/api/Characters')
+      .then(this.GetAllCharacters())
+  }
 
   DeleteCharacter = () => {
     axios
@@ -59,7 +63,9 @@ class App extends Component {
     axios.post('https://localhost:5001/api/Races').then(this.GetAllRaces())
   }
 
-  UpdateRace = () => {}
+  UpdateRace = () => {
+    axios.post('https://localhost:5001/api/Races').then(this.GetAllRaces())
+  }
 
   DeleteRace = () => {
     axios
