@@ -155,13 +155,13 @@ class App extends Component {
           placeholder="Residence"
           onChange={this.ChangeResidence}
         />
-        <select className="one-ring" onChange={this.ChangeOneRing}>
-          <option value="default">Wielded the One Ring?</option>
+        <label for="one-ring">Wielded the One Ring?: </label>
+        <select id="one-ring" onChange={this.ChangeOneRing}>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
-        <select className="drop-down" onChange={this.ChangeRaceSelect}>
-          <option value="default">Select Race</option>
+        <label for="race-select">Select Race: </label>
+        <select id="race-select" onChange={this.ChangeRaceSelect}>
           {this.state.races.map(race => {
             return <option value={race.raceId}>{race.raceName}</option>
           })}
@@ -187,8 +187,8 @@ class App extends Component {
           placeholder="Native Language"
           onChange={this.ChangeLanguage}
         />
-        <select className="is-immortal" onChange={this.ChangeImmortal}>
-          <option value="default">Immortal unless slain?</option>
+        <label for="is-immortal">Immortal unless slain?: </label>
+        <select id="is-immortal" onChange={this.ChangeImmortal}>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
