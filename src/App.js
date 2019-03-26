@@ -39,7 +39,7 @@ class App extends Component {
 
   DeleteCharacter = characterName => {
     axios
-      .delete('https://localhost:5001/api/Characters/name/{characterName}')
+      .delete(`https://localhost:5001/api/Characters/name/${characterName}`)
       .then(this.GetAllCharacters())
   }
 
