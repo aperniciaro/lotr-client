@@ -141,37 +141,43 @@ class App extends Component {
             return <li key={character.id}>{character.name}</li>
           })}
         </ul>
-        <input
-          className="text-field"
-          placeholder="Character Name"
-          onChange={this.ChangeCharacterName}
-        />
-        <input
-          className="text-field"
-          placeholder="Weapon of Choice"
-          onChange={this.ChangeWeapon}
-        />
-        <input
-          className="text-field"
-          placeholder="Profession"
-          onChange={this.ChangeProfession}
-        />
-        <input
-          className="text-field"
-          placeholder="Residence"
-          onChange={this.ChangeResidence}
-        />
-        <label for="one-ring">Wielded the One Ring?: </label>
-        <select id="one-ring" onChange={this.ChangeOneRing}>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        <label for="race-select">Select Race: </label>
-        <select id="race-select" onChange={this.ChangeRaceSelect}>
-          {this.state.races.map(race => {
-            return <option value={race.raceId}>{race.raceName}</option>
-          })}
-        </select>
+        <section className="character-inputs">
+          <section className="text-fields">
+            <input
+              className="text-field"
+              placeholder="Character Name"
+              onChange={this.ChangeCharacterName}
+            />
+            <input
+              className="text-field"
+              placeholder="Weapon of Choice"
+              onChange={this.ChangeWeapon}
+            />
+            <input
+              className="text-field"
+              placeholder="Profession"
+              onChange={this.ChangeProfession}
+            />
+            <input
+              className="text-field"
+              placeholder="Residence"
+              onChange={this.ChangeResidence}
+            />
+          </section>
+          <section className="drop-downs">
+            <label for="one-ring">Wielded the One Ring?: </label>
+            <select id="one-ring" onChange={this.ChangeOneRing}>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <label for="race-select">Select Race: </label>
+            <select id="race-select" onChange={this.ChangeRaceSelect}>
+              {this.state.races.map(race => {
+                return <option value={race.raceId}>{race.raceName}</option>
+              })}
+            </select>
+          </section>
+        </section>
         <section className="button-group">
           <button onClick={this.AddCharacter}>Add Character</button>
           <button onClick={this.UpdateCharacter}>Update Character</button>
@@ -183,21 +189,25 @@ class App extends Component {
             return <li key={race.id}>{race.raceName}</li>
           })}
         </ul>
-        <input
-          className="text-field"
-          placeholder="Race"
-          onChange={this.ChangeRaceName}
-        />
-        <input
-          className="text-field"
-          placeholder="Native Language"
-          onChange={this.ChangeLanguage}
-        />
-        <label for="is-immortal">Immortal unless slain?: </label>
-        <select id="is-immortal" onChange={this.ChangeImmortal}>
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
+        <section className="race-inputs">
+          <section className="text-fields">
+            <input
+              className="text-field"
+              placeholder="Race"
+              onChange={this.ChangeRaceName}
+            />
+            <input
+              className="text-field"
+              placeholder="Native Language"
+              onChange={this.ChangeLanguage}
+            />
+          </section>
+          <label for="is-immortal">Immortal unless slain?: </label>
+          <select id="is-immortal" onChange={this.ChangeImmortal}>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </section>
         <section className="button-group">
           <button onClick={this.AddRace}>Add Race</button>
           <button onClick={this.UpdateRace}>Update Race</button>
