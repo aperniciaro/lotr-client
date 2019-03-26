@@ -4,7 +4,8 @@ import axios from 'axios'
 class App extends Component {
   state = {
     characters: [],
-    races: []
+    races: [],
+    characterNameInput: ''
   }
 
   componentDidMount() {
@@ -36,7 +37,11 @@ class App extends Component {
 
   UpdateCharacter = () => {}
 
-  DeleteCharacter = () => {}
+  DeleteCharacter = characterName => {
+    axios
+      .delete('https://localhost:5001/api/Characters/name/{characterName}')
+      .then(this.GetAllCharacters())
+  }
 
   AddRace = () => {
     axios.post('https://localhost:5001/api/Races').then(this.GetAllRaces())
@@ -45,6 +50,12 @@ class App extends Component {
   UpdateRace = () => {}
 
   DeleteRace = () => {}
+
+  ChangeCharacterName = event => {
+    this.setState({
+      characterNameInput: event.target.value
+    })
+  }
 
   render() {
     return (
@@ -56,7 +67,10 @@ class App extends Component {
             return <li key={character.id}>{character.name}</li>
           })}
         </ul>
-        <input placeholder="Character Name" />
+        <input
+          placeholder="Character Name"
+          onChange={this.ChangeCharacterName}
+        />
         <input placeholder="Weapon of Choice" />
         <input placeholder="Profession" />
         <input placeholder="Residence" />
@@ -73,9 +87,11 @@ class App extends Component {
             return <option value={race.raceId}>{race.raceName}</option>
           })}
         </select>
-        <button onClick="AddCharacter()">Add Character</button>
-        <button onClick="UpdateCharacter()">Update Character</button>
-        <button onClick="DeleteCharacter()">Delete Character</button>
+        <button onClick={this.AddCharacter}>Add Character</button>
+        <button onClick={this.UpdateCharacter}>Update Character</button>
+        <button onClick={this.DeleteCharacter(this.state.characterNameInput)}>
+          Delete Character
+        </button>
         <h2>Races</h2>
         <ul>
           {this.state.races.map(race => {
@@ -91,9 +107,9 @@ class App extends Component {
           <input type="radio" id="no" name="option" value="no" />
           <label for="no">No</label>
         </div>
-        <button onClick="AddRace()">Add Race</button>
-        <button onClick="UpdateRace()">Update Race</button>
-        <button onClick="DeleteRace()">Delete Race</button>
+        <button onClick={this.AddRace}>Add Race</button>
+        <button onClick={this.UpdateRace}>Update Race</button>
+        <button onClick={this.DeleteRace}>Delete Race</button>
       </>
     )
   }
