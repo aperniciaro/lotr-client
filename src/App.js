@@ -9,11 +9,11 @@ class App extends Component {
     weaponInput: '',
     professionInput: '',
     residenceInput: '',
-    ringInput: false,
+    ringInput: '',
     raceSelectInput: '',
     raceNameInput: '',
     languageInput: '',
-    immortalInput: false
+    immortalInput: ''
   }
 
   componentDidMount() {
@@ -45,9 +45,13 @@ class App extends Component {
 
   UpdateCharacter = () => {}
 
-  DeleteCharacter = characterName => {
+  DeleteCharacter = () => {
     axios
-      .delete(`https://localhost:5001/api/Characters/name/${characterName}`)
+      .delete(
+        `https://localhost:5001/api/Characters/name/${
+          this.state.characterNameInput
+        }`
+      )
       .then(this.GetAllCharacters())
   }
 
@@ -57,7 +61,13 @@ class App extends Component {
 
   UpdateRace = () => {}
 
-  DeleteRace = () => {}
+  DeleteRace = () => {
+    axios
+      .delete(
+        `https://localhost:5001/api/Races/name/${this.state.raceNameInput}`
+      )
+      .then(this.GetAllRaces())
+  }
 
   ChangeCharacterName = event => {
     this.setState({
@@ -83,6 +93,12 @@ class App extends Component {
     })
   }
 
+  ChangeOneRing = event => {
+    this.setState({
+      ringInput: event.target.value
+    })
+  }
+
   ChangeRaceSelect = event => {
     this.setState({
       raceSelectInput: event.target.value
@@ -98,6 +114,12 @@ class App extends Component {
   ChangeLanguage = event => {
     this.setState({
       languageInput: event.target.value
+    })
+  }
+
+  ChangeImmortal = event => {
+    this.setState({
+      immortalInput: event.target.value
     })
   }
 
@@ -133,7 +155,7 @@ class App extends Component {
           placeholder="Residence"
           onChange={this.ChangeResidence}
         />
-        <select className="one-ring">
+        <select className="one-ring" onChange={this.ChangeOneRing}>
           <option value="default">Wielded the One Ring?</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
@@ -147,9 +169,7 @@ class App extends Component {
         <section className="button-group">
           <button onClick={this.AddCharacter}>Add Character</button>
           <button onClick={this.UpdateCharacter}>Update Character</button>
-          <button onClick={this.DeleteCharacter(this.state.characterNameInput)}>
-            Delete Character
-          </button>
+          <button onClick={this.DeleteCharacter}>Delete Character</button>
         </section>
         <h2>Races</h2>
         <ul className="race-list">
@@ -167,7 +187,7 @@ class App extends Component {
           placeholder="Native Language"
           onChange={this.ChangeLanguage}
         />
-        <select className="is-immortal">
+        <select className="is-immortal" onChange={this.ChangeImmortal}>
           <option value="default">Immortal unless slain?</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
