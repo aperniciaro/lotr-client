@@ -64,7 +64,7 @@ class App extends Component {
           <h1>LotR-Dex</h1>
         </header>
         <h2>Characters</h2>
-        <ul>
+        <ul className="character-list">
           {this.state.characters.map(character => {
             return <li key={character.id}>{character.name}</li>
           })}
@@ -102,7 +102,7 @@ class App extends Component {
           </section>
         </section>
         <h2>Races</h2>
-        <ul>
+        <ul className="race-list">
           {this.state.races.map(race => {
             return <li key={race.id}>{race.raceName}</li>
           })}
