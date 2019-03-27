@@ -211,7 +211,7 @@ class App extends Component {
                 </div>
                 <div className="character-attribute">
                   <h4>Race: </h4>
-                  <h5>{character.raceId}</h5>
+                  <h5>{character.raceName}</h5>
                 </div>
               </li>
             )
