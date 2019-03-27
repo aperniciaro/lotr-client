@@ -37,7 +37,7 @@ class App extends Component {
     })
   }
 
-  AddCharacter = event => {
+  AddCharacter = () => {
     const data = {
       characterNameInput: this.state.characterNameInput,
       weaponInput: this.state.weaponInput,
