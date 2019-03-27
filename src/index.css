@@ -20,6 +20,16 @@ ul {
   list-style: none;
 }
 
+h4 {
+  margin-right: 0.25rem;
+}
+
+.character-attribute,
+.race-attribute {
+  display: flex;
+  flex-direction: row;
+}
+
 .text-field {
   margin: 0.25rem;
 }

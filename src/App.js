@@ -153,13 +153,13 @@ class App extends Component {
 
   ChangeOneRing = event => {
     this.setState({
-      ringInput: event.target.value
+      ringInput: !!parseInt(event.target.value)
     })
   }
 
   ChangeRaceSelect = event => {
     this.setState({
-      raceSelectInput: event.target.value
+      raceSelectInput: parseInt(event.target.value)
     })
   }
 
@@ -177,7 +177,7 @@ class App extends Component {
 
   ChangeImmortal = event => {
     this.setState({
-      immortalInput: event.target.value
+      immortalInput: !!parseInt(event.target.value)
     })
   }
 
@@ -193,16 +193,26 @@ class App extends Component {
             return (
               <li key={character.id}>
                 <h3>{character.name}</h3>
-                <h4>Weapon of Choice: </h4>
-                <h5>{character.weaponOfChoice}</h5>
-                <h4>Profession: </h4>
-                <h5>{character.profession}</h5>
-                <h4>Residence: </h4>
-                <h5>{character.residence}</h5>
-                <h4>Wielded the One Ring?: </h4>
-                <h5>{character.hasWieldedOneRing}</h5>
-                <h4>Race: </h4>
-                <h5>{character.raceId}</h5>
+                <div className="character-attribute">
+                  <h4>Weapon of Choice: </h4>
+                  <h5>{character.weaponOfChoice}</h5>
+                </div>
+                <div className="character-attribute">
+                  <h4>Profession: </h4>
+                  <h5>{character.profession}</h5>
+                </div>
+                <div className="character-attribute">
+                  <h4>Residence: </h4>
+                  <h5>{character.residence}</h5>
+                </div>
+                <div className="character-attribute">
+                  <h4>Wielded the One Ring?: </h4>
+                  <h5>{character.hasWieldedOneRing}</h5>
+                </div>
+                <div className="character-attribute">
+                  <h4>Race: </h4>
+                  <h5>{character.raceId}</h5>
+                </div>
               </li>
             )
           })}
@@ -236,8 +246,8 @@ class App extends Component {
               <option value="" selected disabled hidden>
                 Select
               </option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
             </select>
             <label htmlFor="race-select">Select Race: </label>
             <select id="race-select" onChange={this.ChangeRaceSelect}>
@@ -265,10 +275,14 @@ class App extends Component {
             return (
               <li key={race.id}>
                 <h3>{race.raceName}</h3>
-                <h4>Native Language: </h4>
-                <h5>{race.nativeLanguage}</h5>
-                <h4>Is Immortal?: </h4>
-                <h5>{race.isImmortal}</h5>
+                <div className="race-attribute">
+                  <h4>Native Language: </h4>
+                  <h5>{race.nativeLanguage}</h5>
+                </div>
+                <div className="race-attribute">
+                  <h4>Is Immortal?: </h4>
+                  <h5>{race.isImmortal}</h5>
+                </div>
               </li>
             )
           })}
@@ -291,8 +305,8 @@ class App extends Component {
             <option value="" selected disabled hidden>
               Select
             </option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
           </select>
         </section>
         <section className="button-group">
