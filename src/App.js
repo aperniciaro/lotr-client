@@ -207,7 +207,7 @@ class App extends Component {
                 </div>
                 <div className="character-attribute">
                   <h4>Wielded the One Ring?: </h4>
-                  <h5>{character.hasWieldedOneRing}</h5>
+                  <h5>{character.hasWieldedOneRing ? 'Yes' : 'No'}</h5>
                 </div>
                 <div className="character-attribute">
                   <h4>Race: </h4>
@@ -281,7 +281,7 @@ class App extends Component {
                 </div>
                 <div className="race-attribute">
                   <h4>Is Immortal?: </h4>
-                  <h5>{race.isImmortal}</h5>
+                  <h5>{race.isImmortal ? 'Yes' : 'No'}</h5>
                 </div>
               </li>
             )
