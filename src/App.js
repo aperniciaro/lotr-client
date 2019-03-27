@@ -39,12 +39,12 @@ class App extends Component {
 
   AddCharacter = () => {
     const data = {
-      Name: this.state.characterNameInput,
-      WeaponOfChoice: this.state.weaponInput,
-      Profession: this.state.professionInput,
-      Residence: this.state.residenceInput,
-      HasWieldedOneRing: this.state.ringInput,
-      RaceId: this.state.raceSelectInput
+      name: this.state.characterNameInput,
+      weaponOfChoice: this.state.weaponInput,
+      profession: this.state.professionInput,
+      residence: this.state.residenceInput,
+      hasWieldedOneRing: this.state.ringInput,
+      raceId: this.state.raceSelectInput
     }
 
     axios
@@ -56,12 +56,12 @@ class App extends Component {
 
   UpdateCharacter = () => {
     const data = {
-      Name: this.state.characterNameInput,
-      WeaponOfChoice: this.state.weaponInput,
-      Profession: this.state.professionInput,
-      Residence: this.state.residenceInput,
-      HasWieldedOneRing: this.state.ringInput,
-      RaceId: this.state.raceSelectInput
+      name: this.state.characterNameInput,
+      weaponOfChoice: this.state.weaponInput,
+      profession: this.state.professionInput,
+      residence: this.state.residenceInput,
+      hasWieldedOneRing: this.state.ringInput,
+      raceId: this.state.raceSelectInput
     }
 
     axios
@@ -89,9 +89,9 @@ class App extends Component {
 
   AddRace = () => {
     const data = {
-      RaceName: this.state.raceNameInput,
-      NativeLanguage: this.state.languageInput,
-      IsImmortal: this.state.immortalInput
+      raceName: this.state.raceNameInput,
+      nativeLanguage: this.state.languageInput,
+      isImmortal: this.state.immortalInput
     }
 
     axios
@@ -103,9 +103,9 @@ class App extends Component {
 
   UpdateRace = () => {
     const data = {
-      RaceName: this.state.raceNameInput,
-      NativeLanguage: this.state.languageInput,
-      IsImmortal: this.state.immortalInput
+      raceName: this.state.raceNameInput,
+      nativeLanguage: this.state.languageInput,
+      isImmortal: this.state.immortalInput
     }
 
     axios
