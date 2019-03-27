@@ -190,7 +190,21 @@ class App extends Component {
         <h2>Characters</h2>
         <ul className="character-list">
           {this.state.characters.map(character => {
-            return <li key={character.id}>{character.name}</li>
+            return (
+              <li key={character.id}>
+                <h3>{character.name}</h3>
+                <h4>Weapon of Choice: </h4>
+                <h5>{character.weaponOfChoice}</h5>
+                <h4>Profession: </h4>
+                <h5>{character.profession}</h5>
+                <h4>Residence: </h4>
+                <h5>{character.residence}</h5>
+                <h4>Wielded the One Ring?: </h4>
+                <h5>{character.hasWieldedOneRing}</h5>
+                <h4>Race: </h4>
+                <h5>{character.raceId}</h5>
+              </li>
+            )
           })}
         </ul>
         <section className="character-inputs">
@@ -248,7 +262,15 @@ class App extends Component {
         <h2>Races</h2>
         <ul className="race-list">
           {this.state.races.map(race => {
-            return <li key={race.id}>{race.raceName}</li>
+            return (
+              <li key={race.id}>
+                <h3>{race.raceName}</h3>
+                <h4>Native Language: </h4>
+                <h5>{race.nativeLanguage}</h5>
+                <h4>Is Immortal?: </h4>
+                <h5>{race.isImmortal}</h5>
+              </li>
+            )
           })}
         </ul>
         <section className="race-inputs">
