@@ -225,7 +225,11 @@ class App extends Component {
             <label htmlFor="race-select">Select Race: </label>
             <select id="race-select" onChange={this.ChangeRaceSelect}>
               {this.state.races.map(race => {
-                return <option value={race.raceId}>{race.raceName}</option>
+                return (
+                  <option key={race.id} value={race.id}>
+                    {race.raceName}
+                  </option>
+                )
               })}
             </select>
           </section>
