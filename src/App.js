@@ -37,15 +37,43 @@ class App extends Component {
     })
   }
 
-  AddCharacter = () => {
+  AddCharacter = event => {
+    const data = {
+      characterNameInput: this.state.characterNameInput,
+      weaponInput: this.state.weaponInput,
+      professionInput: this.state.professionInput,
+      residenceInput: this.state.residenceInput,
+      ringInput: this.state.ringInput,
+      raceSelectInput: this.state.raceSelectInput
+    }
+
     axios
-      .post('https://localhost:5001/api/Characters')
+      .post('https://localhost:5001/api/Characters', data, {
+        headers: { 'Content-type': 'application/json' }
+      })
       .then(this.GetAllCharacters())
   }
 
   UpdateCharacter = () => {
+    const data = {
+      characterNameInput: this.state.characterNameInput,
+      weaponInput: this.state.weaponInput,
+      professionInput: this.state.professionInput,
+      residenceInput: this.state.residenceInput,
+      ringInput: this.state.ringInput,
+      raceSelectInput: this.state.raceSelectInput
+    }
+
     axios
-      .post('https://localhost:5001/api/Characters')
+      .put(
+        `https://localhost:5001/api/Characters/name/${
+          this.state.characterNameInput
+        }`,
+        data,
+        {
+          headers: { 'Content-type': 'application/json' }
+        }
+      )
       .then(this.GetAllCharacters())
   }
 
@@ -60,11 +88,35 @@ class App extends Component {
   }
 
   AddRace = () => {
-    axios.post('https://localhost:5001/api/Races').then(this.GetAllRaces())
+    const data = {
+      raceNameInput: this.state.raceNameInput,
+      languageInput: this.state.languageInput,
+      immortalInput: this.state.immortalInput
+    }
+
+    axios
+      .post('https://localhost:5001/api/Races', data, {
+        headers: { 'Content-type': 'application/json' }
+      })
+      .then(this.GetAllRaces())
   }
 
   UpdateRace = () => {
-    axios.post('https://localhost:5001/api/Races').then(this.GetAllRaces())
+    const data = {
+      raceNameInput: this.state.raceNameInput,
+      languageInput: this.state.languageInput,
+      immortalInput: this.state.immortalInput
+    }
+
+    axios
+      .put(
+        `https://localhost:5001/api/Races/name/${this.state.raceNameInput}`,
+        data,
+        {
+          headers: { 'Content-type': 'application/json' }
+        }
+      )
+      .then(this.GetAllRaces())
   }
 
   DeleteRace = () => {
