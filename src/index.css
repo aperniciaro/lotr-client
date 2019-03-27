@@ -39,6 +39,14 @@ h5 {
   margin: 0.25rem;
 }
 
+.drop-downs {
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+select {
+  margin-right: 0.5rem;
+}
+
 button {
   margin: 0.25rem;
   width: 5rem;

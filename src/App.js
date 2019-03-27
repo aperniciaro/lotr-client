@@ -300,14 +300,16 @@ class App extends Component {
               onChange={this.ChangeLanguage}
             />
           </section>
-          <label htmlFor="is-immortal">Immortal unless slain?: </label>
-          <select id="is-immortal" onChange={this.ChangeImmortal}>
-            <option value="" selected disabled hidden>
-              Select
-            </option>
-            <option value="1">Yes</option>
-            <option value="0">No</option>
-          </select>
+          <section className="drop-downs">
+            <label htmlFor="is-immortal">Immortal unless slain?: </label>
+            <select id="is-immortal" onChange={this.ChangeImmortal}>
+              <option value="" selected disabled hidden>
+                Select
+              </option>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </section>
         </section>
         <section className="button-group">
           <button onClick={this.AddRace}>Add Race</button>
