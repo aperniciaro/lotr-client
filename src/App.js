@@ -51,7 +51,7 @@ class App extends Component {
       .post('https://localhost:5001/api/Characters', data, {
         headers: { 'Content-type': 'application/json' }
       })
-      .then(this.GetAllCharacters())
+      .then(this.GetAllCharacters)
   }
 
   UpdateCharacter = () => {
@@ -74,7 +74,7 @@ class App extends Component {
           headers: { 'Content-type': 'application/json' }
         }
       )
-      .then(this.GetAllCharacters())
+      .then(this.GetAllCharacters)
   }
 
   DeleteCharacter = () => {
@@ -84,7 +84,7 @@ class App extends Component {
           this.state.characterNameInput
         }`
       )
-      .then(this.GetAllCharacters())
+      .then(this.GetAllCharacters)
   }
 
   AddRace = () => {
@@ -98,7 +98,7 @@ class App extends Component {
       .post('https://localhost:5001/api/Races', data, {
         headers: { 'Content-type': 'application/json' }
       })
-      .then(this.GetAllRaces())
+      .then(this.GetAllRaces)
   }
 
   UpdateRace = () => {
@@ -116,7 +116,7 @@ class App extends Component {
           headers: { 'Content-type': 'application/json' }
         }
       )
-      .then(this.GetAllRaces())
+      .then(this.GetAllRaces)
   }
 
   DeleteRace = () => {
@@ -124,7 +124,7 @@ class App extends Component {
       .delete(
         `https://localhost:5001/api/Races/name/${this.state.raceNameInput}`
       )
-      .then(this.GetAllRaces())
+      .then(this.GetAllRaces)
   }
 
   ChangeCharacterName = event => {
