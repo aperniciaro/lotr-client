@@ -217,12 +217,12 @@ class App extends Component {
             />
           </section>
           <section className="drop-downs">
-            <label for="one-ring">Wielded the One Ring?: </label>
+            <label htmlFor="one-ring">Wielded the One Ring?: </label>
             <select id="one-ring" onChange={this.ChangeOneRing}>
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
-            <label for="race-select">Select Race: </label>
+            <label htmlFor="race-select">Select Race: </label>
             <select id="race-select" onChange={this.ChangeRaceSelect}>
               {this.state.races.map(race => {
                 return <option value={race.raceId}>{race.raceName}</option>
@@ -254,7 +254,7 @@ class App extends Component {
               onChange={this.ChangeLanguage}
             />
           </section>
-          <label for="is-immortal">Immortal unless slain?: </label>
+          <label htmlFor="is-immortal">Immortal unless slain?: </label>
           <select id="is-immortal" onChange={this.ChangeImmortal}>
             <option value="yes">Yes</option>
             <option value="no">No</option>
