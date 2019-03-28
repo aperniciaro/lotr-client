@@ -22,21 +22,28 @@ ul {
   list-style: none;
 }
 
+h1 {
+  color: rgb(218, 211, 200);
+}
+
 h2 {
-  color: rgb(121, 80, 58);
+  color: rgb(70, 147, 131);
 }
 
 h3 {
+  color: rgb(59, 147, 131);
 }
 
 h4 {
   margin: 0 0.25rem 0.5rem 0;
   text-decoration: underline;
+  color: rgb(39, 139, 150);
 }
 
 h5 {
   margin: 0 0 0.5rem 0;
   font-size: 0.9rem;
+  color: rgb(35, 117, 104);
 }
 
 .character-attribute,
